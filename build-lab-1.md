@@ -1,6 +1,6 @@
 # Build Lab 1 — Build Your First AI-Powered Product Tool
 
-**After Session 1 · Due before Session 2 (June 24) · 2–3 hours**
+**After Session 1 · Due before Session 2 (July 22) · 2–3 hours**
 
 In Session 1 you built and ran a tool locally with `claude -p`. Build Lab 1 goes further — you build something that connects to a real product problem, with a real input/output contract and a clear sense of what "working" means, and you ship it as a live product anyone can open.
 

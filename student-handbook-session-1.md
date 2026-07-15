@@ -1,12 +1,12 @@
 # Working Session 1 — AI Product Strategy & AI-Native PM Workflows
 
-**Wednesday, June 17 · 7:30–10:30 PM IST**
+**Wednesday, July 15 · 7:30–10:30 PM IST**
 
 ---
 
 ## Tonight's Scenario
 
-You joined TalentScope as their first PM two weeks ago. The CEO has handed you three folders and said: "The engineering team needs a product brief by Friday. We have user research from March, beta feedback from the last eight weeks, and the engineers are waiting. Figure out what we build for v1."
+You joined TalentScope as their first PM two weeks ago. The CEO has handed you three folders and said: "The engineering team needs a product brief by Friday. We have user research from April, beta feedback from the last eight weeks, and the engineers are waiting. Figure out what we build for v1."
 
 Tonight you use Claude to do the entire product analysis — synthesize the research, identify the gaps, write the PRD sections — and then you build a tool that automates this workflow.
 
@@ -39,7 +39,9 @@ PRD Generator live at http://localhost:3000
 - Terminal open, Claude Code ready
 - The cohort repo cloned:
 ```bash
-git clone https://github.com/thecrux-ai/aipm-01 ~/thecrux-pmtrack/aipm-01
+mkdir -p ~/thecrux-pmtrack
+cd ~/thecrux-pmtrack
+git clone https://github.com/thecrux-ai/aipm-02
 ```
 - A real AI feature from your own product in mind
 
@@ -88,7 +90,7 @@ Same agenda as Regular Pace — including the manual PM Workflows — just at a 
 This is Session 1. We set the frame for the whole program.
 
 **How this course works.** Instructors walk through:
-- The arc: four Build Labs for hands-on practice, running in parallel with your Capstone — the real product you build alongside them and demo live on July 18
+- The arc: four Build Labs for hands-on practice, running in parallel with your Capstone — the real product you build alongside them and demo live on August 15
 - What's expected each week — you ship working tools, not slides
 - The TalentScope case study — the running scenario you'll use tonight; the Build Labs practice on it, and you can also choose it for your capstone
 
@@ -192,7 +194,7 @@ This is 45 minutes of careful reading and analysis done manually. Or it's 8 minu
 ### Step 1: Navigate to the session materials
 
 ```bash
-cd ~/thecrux-pmtrack/aipm-01
+cd ~/thecrux-pmtrack/aipm-02
 ls talentscope-data/
 claude
 ```
@@ -430,7 +432,7 @@ This workflow runs that room before you've booked it. Claude role-plays five sen
 
 ### The scenario
 
-Your PRD section (`prd-section.md`) is written. Before it goes to the real review, you want to know where it'll get torn apart — while it's still cheap to fix. The TalentScope room has five people who matter: Meera Pillai (CEO), Aditya Shah (CTO), a Data Science lead, Legal & Compliance, and a GTM lead carrying the Sundaram Finance contract that closes end of July.
+Your PRD section (`prd-section.md`) is written. Before it goes to the real review, you want to know where it'll get torn apart — while it's still cheap to fix. The TalentScope room has five people who matter: Meera Pillai (CEO), Aditya Shah (CTO), a Data Science lead, Legal & Compliance, and a GTM lead carrying the Sundaram Finance contract that closes end of August.
 
 Go back to the first terminal tab — the one running Claude Code in `~/thecrux-pmtrack` (the same tab you used for Workflow 3, not the `prd-generator` build tab).
 
@@ -461,7 +463,7 @@ The board:
    Will block if a human is not demonstrably in the loop on every reject.
 
 4. GTM Lead — owns launch-readiness against customer commitments. Cares about: the
-   end-July Sundaram Finance deadline, what Sales can honestly promise, and which
+   end-August Sundaram Finance deadline, what Sales can honestly promise, and which
    PRD scope is at risk of slipping the date.
 
 5. Meera Pillai, CEO — owns the final go/no-go. Cares about strategic fit and
@@ -485,8 +487,8 @@ Save the output as my_work/prd-review-board.md
 
 > **🗣️ Discussion Topic — Resolve the conflicts (5 min)**
 >
-> Read the OPEN CONFLICTS section. Pick the sharpest one — almost certainly **GTM's July deadline vs. Data Science's eval rigor**. Three questions:
-> 1. Who's right? What would you cut or phase to ship something defensible by end of July without breaking the no-automated-rejection rule?
+> Read the OPEN CONFLICTS section. Pick the sharpest one — almost certainly **GTM's August deadline vs. Data Science's eval rigor**. Three questions:
+> 1. Who's right? What would you cut or phase to ship something defensible by end of August without breaking the no-automated-rejection rule?
 > 2. Did the board surface a condition you hadn't thought of? Which one, and from which stakeholder?
 > 3. Is there a "yes" here that's actually fake — a stakeholder who approved but whose real concern wasn't addressed?
 
@@ -793,7 +795,7 @@ This week you ship a working AI-powered tool with a **live URL.**
 
 ## Looking Ahead: Capstone Options & Teams
 
-Now that you've seen what a Build Lab involves, we set up the capstone. The capstone runs **in parallel** with the Build Labs — the Labs are your hands-on practice, the capstone is the real product you build alongside them and demo live on July 18 (8 minutes, running code, not slides). You'll work it in **teams of 2–3.** Three direction options:
+Now that you've seen what a Build Lab involves, we set up the capstone. The capstone runs **in parallel** with the Build Labs — the Labs are your hands-on practice, the capstone is the real product you build alongside them and demo live on August 15 (8 minutes, running code, not slides). You'll work it in **teams of 2–3.** Three direction options:
 
 1. **Your own product** — spec and build for a real AI feature on your team's roadmap
 2. **TalentScope** — make the running case study your capstone and take it further than the Labs do
@@ -818,7 +820,7 @@ Full details for each: [capstone-problems.md](capstone-problems.md)
 
 **Form your teams now — live, with a shared Google Sheet:**
 
-> **Capstone team sign-up sheet:** _(instructor drops the link in the WhatsApp group)_
+> **Capstone team sign-up sheet:** [Open the sheet](https://docs.google.com/spreadsheets/d/16qfIIa30atycAmpY9GLYBw2SAFC_KnMAeaR5g2n2Ue8/edit?usp=sharing)
 >
 > 1. Open the sheet. It has numbered team rows, each with three seats.
 > 2. Type your name into any open seat. Already have a partner? Grab a row together. Solo? Claim a seat — teammates will land next to you.

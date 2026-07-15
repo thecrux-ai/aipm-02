@@ -125,7 +125,7 @@ Context for the PM team:
 - 6 beta customers, mixed NPS (2 promoters, 2 passives, 2 detractors)
 - 7 open P1 bugs still unresolved
 - Top beta issues: college-tier bias, geography criterion handling, multilingual failure, confidence score confusion
-- GA target: end of August
+- GA target: end of September
 - Core constraint: one visible wrong recommendation reaching a hiring manager kills adoption for that account
 
 Draft 3 Objectives with 3–4 KRs each. Every KR must have a number.
@@ -142,7 +142,7 @@ Draft 3 Objectives with 3–4 KRs each. Every KR must have a number.
 ```
 /pm-execution:pre-mortem
 
-Plan: TalentScope GA launch, target date August 31.
+Plan: TalentScope GA launch, target date September 30.
 
 What we're committing to:
 - Product: AI resume screener, structured interview agent, hiring recommendation memo
@@ -295,7 +295,7 @@ Your folder is empty, so `/pm-brain` starts in **greenfield mode** — a short o
 |---|---|
 | Company | TalentScope, Pune-based HR-tech startup, AI-powered hiring assistant for Indian mid-market companies (200–2,000 employees) |
 | Your role | First PM, building v1 from beta to GA. Reporting to Meera (CEO). |
-| Current priorities | Resolve 7 P1 bugs, ship fairness guardrail, convert 4 beta customers to paid, GA by end of August |
+| Current priorities | Resolve 7 P1 bugs, ship fairness guardrail, convert 4 beta customers to paid, GA by end of September |
 | Key stakeholders | Meera Pillai (CEO), Aditya Shah (CTO), 6 beta customer contacts across NBFC/manufacturing/FMCG |
 | What's in flight | GA launch plan, fairness guardrail spec, confidence score redesign, Excel export |
 
@@ -306,7 +306,7 @@ Your folder is empty, so `/pm-brain` starts in **greenfield mode** — a short o
 ### Exercise 2: Ingest the user research (8 min)
 
 ```
-/ingest ~/thecrux-pmtrack/aipm-01/talentscope-data/user-research-transcripts.md
+/ingest ~/thecrux-pmtrack/aipm-02/talentscope-data/user-research-transcripts.md
 ```
 
 After it finishes, ask:
@@ -322,7 +322,7 @@ What does the brain now understand about what these three HR managers have in co
 ### Exercise 3: Ingest the beta feedback (8 min)
 
 ```
-/ingest ~/thecrux-pmtrack/aipm-01/talentscope-data/beta-feedback.md
+/ingest ~/thecrux-pmtrack/aipm-02/talentscope-data/beta-feedback.md
 ```
 
 After ingestion, ask:
@@ -344,10 +344,10 @@ These are now tracked hypotheses — not just observations — with evidence row
 
 You just got off a call with Rajesh Menon (Sundaram Finance). He said:
 
-> "Fix the geography problem and add Excel export — we'll sign the 12-month contract by end of July."
+> "Fix the geography problem and add Excel export — we'll sign the 12-month contract by end of August."
 
 ```
-Rajesh Menon, HR Manager at Sundaram Finance, told me on a call today: "Fix the geography problem and add Excel export — we'll sign the 12-month contract by end of July."
+Rajesh Menon, HR Manager at Sundaram Finance, told me on a call today: "Fix the geography problem and add Excel export — we'll sign the 12-month contract by end of August."
 
 Capture as a verbal stakeholder claim. Route to any open hypotheses or decisions it touches. Note any conflict with documented evidence.
 ```
@@ -364,7 +364,7 @@ Rajesh Menon is now a stakeholder in your brain (from the last exercise), and yo
 /prep Rajesh Menon
 ```
 
-**What to watch:** The brief should pull only what the call needs — his open ask (fix geography + add Excel export), the commercial context (12-month contract, end-July deadline), the last unresolved concern, and a few suggested questions. It reads his `stakeholders/` file and the items linked from it, not the whole brain. That's the stakeholder layer paying off: one command, meeting-ready.
+**What to watch:** The brief should pull only what the call needs — his open ask (fix geography + add Excel export), the commercial context (12-month contract, end-August deadline), the last unresolved concern, and a few suggested questions. It reads his `stakeholders/` file and the items linked from it, not the whole brain. That's the stakeholder layer paying off: one command, meeting-ready.
 
 ---
 
@@ -407,7 +407,7 @@ Rajesh Menon is now a stakeholder in your brain (from the last exercise), and yo
 **What to watch:** After eight exercises, the review should already surface:
 - One open decision with a deadline (how to fix college bias in 6 weeks)
 - One hypothesis ready to act on (geography: 3 independent observations, solution candidate exists)
-- One verbal commitment needing a follow-up (Rajesh's July offer)
+- One verbal commitment needing a follow-up (Rajesh's August offer)
 - The hypothesis stubs `/risk` opened for areas with no evidence yet
 - One drift flag (anything you captured but left without a next action)
 

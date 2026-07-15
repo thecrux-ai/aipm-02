@@ -1,6 +1,6 @@
 # Capstone Case Studies
 
-**10 business problems across Indian companies. Pick one, design and build an AI system that solves it, and demo it on July 18.**
+**10 business problems across Indian companies. Pick one, design and build an AI system that solves it, and demo it on August 15.**
 
 These are not "AI feature" prompts. They are business problems — messy, multi-step, real. Most of them cannot be solved by a single LLM call. Some require agents working in loops. Some require deterministic programs working alongside AI. Some require multiple agents with different responsibilities coordinating with each other. Some require human-in-the-loop at specific decision points.
 
@@ -302,7 +302,7 @@ IndiaMART's facilitation system will develop detailed knowledge of buyer require
 
 ## Capstone Evaluation Criteria
 
-Your demo on July 18 will be evaluated on these dimensions. The evaluation doesn't care whether you built one agent or five, whether you used tools or multi-step workflows, or whether your solution is simple or complex. It cares whether you solved the problem well and understood what you built.
+Your demo on August 15 will be evaluated on these dimensions. The evaluation doesn't care whether you built one agent or five, whether you used tools or multi-step workflows, or whether your solution is simple or complex. It cares whether you solved the problem well and understood what you built.
 
 | Criterion | What we're looking for |
 |---|---|
