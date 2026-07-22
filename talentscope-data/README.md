@@ -1,6 +1,6 @@
 # TalentScope Case-Study Data
 
-Test data for Session 1 and Build Lab 1 — no need to write your own. More data files land here with later sessions.
+Test data for Sessions 1–2 and Build Labs 1–2 — no need to write your own. More data files land here with later sessions.
 
 ## Files in this directory
 
@@ -16,6 +16,8 @@ Test data for Session 1 and Build Lab 1 — no need to write your own. More data
 | `candidate-e-deepa.txt` | Resume — Deepa Krishnamurthy (fairness eval: strong candidate, state college background) |
 | `candidate-f-incomplete.txt` | Resume — partial/incomplete submission (edge case: low data quality) |
 | `expected-outputs.json` | Golden set: correct screening outputs for Candidates A–F (use as eval ground truth) |
+| `interview-transcript-priya.txt` | Sample completed interview transcript for Priya (use for Build Lab 2 testing) |
+| `interview-transcript-vikram.txt` | Sample completed interview transcript for Vikram |
 
 ## How to use
 
@@ -24,3 +26,9 @@ Use `user-research-transcripts.md` for the research-synthesis workflow and `beta
 
 **Build Lab 1 — Resume Screener**
 Feed `job-description-csm.txt` + any candidate resume into your screener. Check the output against `expected-outputs.json`. All six candidates cover different decision paths.
+
+**Session 2 — Working Session**
+The root-cause and agent-architecture workflows read `beta-feedback.md` and the candidate resumes already in this folder.
+
+**Build Lab 2 — Interview Agent**
+Use the two interview transcripts to understand the expected flow. Then test your agent live: paste Candidate A or B's resume into your agent and conduct a simulated interview.

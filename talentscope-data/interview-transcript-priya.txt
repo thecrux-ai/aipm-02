@@ -1,0 +1,104 @@
+TALENTSCOPE INTERVIEW TRANSCRIPT
+Candidate: Priya Raghunathan (Candidate A)
+Role: Customer Success Manager — Kirana360 Technologies
+Interview date: [simulated]
+Status: Completed (7 exchanges)
+
+---
+
+[INTERVIEW AGENT OPENING MESSAGE]
+
+Hi Priya — thanks for applying for the Customer Success Manager role at Kirana360. This is an async text interview. There are no right or wrong answers to these questions — I'm looking to understand how you think about customer success, not test recall. Take your time and answer in as much detail as you're comfortable with. I'll ask a few follow-up questions based on your answers.
+
+Let's start: Can you walk me through one account where you prevented a churn that you saw coming? What signals did you pick up, and what did you actually do?
+
+---
+
+[CANDIDATE RESPONSE 1]
+
+Sure. About 18 months ago I had an account called Bengaluru Garments — they were using GreytHR for payroll and leave management for about 350 employees. Their contract was up for renewal in March.
+
+In January I noticed two things: their login frequency had dropped from about 15 logins per day (average across their HR team) to 4-5. And their support ticket volume had spiked — 3 tickets in 2 weeks about the same issue: syncing leave balances when employees transfer across locations. This wasn't a product bug, it was a configuration gap from their original onboarding.
+
+I called the HR manager directly (didn't wait for the scheduled QBR in February) and asked what was going on. Turns out their company had done an internal restructuring — two new business units, employees were shifting across locations, and the original leave policy config wasn't set up to handle cross-location transfers. It had been a manual workaround for 6 months and the HR team was frustrated.
+
+I looped in a solutions consultant from our team and we did a one-hour configuration session with them. Fixed the root issue. Then I also introduced them to a feature they weren't using — the leave approval workflow — which actually replaced two manual processes they'd been doing in WhatsApp.
+
+They renewed in March, expanded their headcount add-on by 80 seats, and the HR manager referred us to two other companies in their industrial park. That's probably the outcome I'm most proud of — it went from a potential churn to a reference account.
+
+---
+
+[INTERVIEW AGENT FOLLOW-UP 1]
+
+That's a clear example — the signals, the intervention, and the outcome all make sense. One question: you mentioned you called the HR manager directly rather than waiting for the QBR. How did you decide to do that? Was there a threshold you used, or was it more of an instinct call?
+
+---
+
+[CANDIDATE RESPONSE 2]
+
+Both, honestly. I had a rough mental model: if login frequency drops more than 40% week-over-week for two consecutive weeks, that's worth a proactive call regardless of where the account is in the renewal cycle. I didn't have a formal system for it at the time — I was tracking it in a spreadsheet I'd built myself.
+
+But it was also instinct in this case because the support tickets were about the same issue, not different issues. Multiple tickets on the same problem usually means the problem is causing real workflow pain, not just curiosity. If someone files 3 tickets about 3 different things, they're exploring the product. If they file 3 tickets about the same thing, something is broken for them.
+
+I've since advocated for putting some of these signals into our actual health scoring system. We did get a couple of them added — login frequency and repeat-ticket-on-same-issue — as factors in our health score. Not a full churn model, but better than nothing.
+
+---
+
+[INTERVIEW AGENT FOLLOW-UP 2]
+
+Good instinct on the ticket pattern — that's a useful signal. Let me shift to the Kirana360 context. This role involves managing accounts for retail chains using inventory management software. You've been in HR-tech for most of your career. How would you prepare to get up to speed on a domain you haven't worked in, and how long do you think it would take before you're confident talking to a procurement head at a mid-sized retail chain?
+
+---
+
+[CANDIDATE RESPONSE 3]
+
+Honest answer: the domain is learnable, but it takes effort and I wouldn't pretend to be an expert in month one.
+
+My plan would be: first two weeks, I'd spend time with the product team and the implementation team — not just reading documentation but sitting in on actual customer onboarding calls. That's how I learned the nuances of GreytHR in my first month. You hear the actual problems customers are solving, not the marketing version.
+
+Second, I'd spend time with at least 5–6 existing Kirana360 customers in my first month — not to sell them anything, just to understand their day. What does a typical day look like for the person who uses the software? What's the thing they hate most about their current process? What does "it's working" look like to them?
+
+For retail specifically: inventory management intersects with a lot of daily pressure — stockouts, expiry, margin. These are things that feel urgent and visible to a store manager in a way that, say, leave management doesn't for an HR manager. I'd expect the conversation at a procurement head level to be more ROI-focused and fairly direct about what's not working. I'd feel confident in that conversation by month 2–3, not month 1.
+
+What I would not do is walk into a conversation pretending to know things I don't. If a procurement head asks me something I don't know, I'd say "let me get you the right answer from our team" — I think that builds more trust than a confident wrong answer.
+
+---
+
+[INTERVIEW AGENT FOLLOW-UP 3]
+
+That's a realistic framing. Last question: the job description mentions that success in year one includes zero preventable churns. How do you define "preventable" versus a churn that you just couldn't stop?
+
+---
+
+[CANDIDATE RESPONSE 4]
+
+A preventable churn is one where there was a signal I could have acted on and I didn't — either because I didn't notice it, or I noticed and deprioritised it, or I took the wrong action.
+
+An unpreventable churn is one where the signal was absent, or the root cause was outside anything a CSM could address — budget cuts, company shutdown, M&A, a decision made at the CEO level for reasons that have nothing to do with product satisfaction.
+
+The grey zone is churn where there was a signal but the root cause was something we couldn't fix — a product gap, a pricing mismatch, a competitor offering something we don't. In those cases, I think the CSM's job is to have documented the risk early, escalated it internally, and made sure the company understood why we were losing this account. That's not a preventable churn in my view, but it is a learning we have to capture.
+
+I track my churns retrospectively — for every account that left, I write a one-paragraph "churn story" for myself: what happened, when the signal appeared, what I did, what I should have done differently. I've shared these with my team lead as a pattern recognition exercise. Of my 3 churns in 5 years, one was a company shutdown, one was a competitor with a significantly lower price point that we couldn't match, and one is one I replay — there was a signal I saw and deprioritised. That's the one I learn from.
+
+---
+
+[INTERVIEW AGENT CLOSING MESSAGE]
+
+Thanks, Priya — that's all the questions I have. Your responses have given us a clear picture of how you think about account management and what you'd bring to this role. The recruiter will review your answers alongside your resume and be in touch within 3 business days.
+
+---
+
+INTERVIEW SUMMARY (generated by TalentScope)
+
+Exchanges: 7 (3 candidate responses + 3 follow-up questions + closing)
+Completion: Full
+
+Key signals:
+- Demonstrated systematic approach to churn detection (login frequency + ticket pattern signals)
+- Evidence of cross-functional collaboration (looped in solutions consultant)
+- Proactive before-QBR intervention with clear business outcome (renewal + expansion + referral)
+- Realistic and thoughtful about domain ramp-up timeline
+- Strong definition of "preventable churn" with personal accountability element
+- Tracks her own churn retrospectively — learning orientation
+
+Concerns surfaced: None significant. Domain gap (HR-tech → retail) is real but candidate's ramp-up plan is credible and self-aware.
