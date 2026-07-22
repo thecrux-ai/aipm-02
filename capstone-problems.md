@@ -1,6 +1,6 @@
 # Capstone Case Studies
 
-**11 business problems across Indian and US companies. Pick one, design and build an AI system that solves it, and demo it on August 15.**
+**15 business problems across Indian and US companies. Pick one, design and build an AI system that solves it, and demo it on August 15.**
 
 These are not "AI feature" prompts. They are business problems — messy, multi-step, real. Most of them cannot be solved by a single LLM call. Some require agents working in loops. Some require deterministic programs working alongside AI. Some require multiple agents with different responsibilities coordinating with each other. Some require human-in-the-loop at specific decision points.
 
@@ -319,6 +319,100 @@ Most refund decisions resolve within an hour instead of sitting in a support que
 ### The hard question
 
 Airbnb's growth depends far more on guest satisfaction and repeat bookings than on any single host's happiness — hosts are, in aggregate, replaceable; a guest's next ten years of bookings are not. A refund-adjudication system built and tuned by Airbnb has a structural incentive to lean guest-friendly on close calls, independent of what the evidence actually supports. How would you even detect, let alone prove, whether the system is deciding disputes on the merits versus quietly optimizing for whichever side is more valuable to Airbnb's business? And if you found it was biased, would Airbnb's own incentives let it fix that?
+
+---
+
+## Case Study 12 — United Airlines: Irregular Operations Passenger Recovery
+
+### The business problem
+
+A thunderstorm line closes Newark for three hours on a Friday evening. Two hundred flights cancel or delay, and forty thousand passengers are suddenly holding worthless itineraries. United's current recovery is two systems that don't talk: an auto-rebooking engine that applies simple rules (next available United flight to the same destination), and a call center where hold times hit four hours within the first thirty minutes of the disruption.
+
+The auto-rebooking engine is fast and frequently wrong in ways that matter. It splits a family of four across two flights because it optimizes seat-by-seat. It routes an international passenger through a connection where they have no transit visa. It gives tonight's last seat to a passenger with a flexible week and books the passenger flying to a Saturday wedding onto a Monday departure — because the engine knows fare class and loyalty tier, and nothing about why anyone is traveling. The passengers who get bad auto-rebookings are exactly the ones who then join the four-hour phone queue, where a human agent unwinds the engine's work seat by seat.
+
+The raw material for doing this well exists: the full booking record (who's traveling together, connections, special service requests), downstream flight loads, partner-airline availability, hotel and meal voucher inventory near each airport, and the DOT rules that determine what each passenger is legally owed. And the disruption itself keeps moving — a recovery plan built at 6 PM is stale by 6:40 when two more flights cancel and one delayed aircraft is released.
+
+### Why a single AI call won't solve this
+
+Matching thousands of passengers to a scarce, shrinking pool of seats is an optimization problem — deterministic code, not an LLM. But deciding which itineraries are too complex or too consequential for the optimizer and need judgment (the unaccompanied minor, the passenger mid-way through a three-leg international trip, the group of twelve) is triage. Communicating each rebooking requires generating a message specific to that passenger's situation — what changed, why, what they're owed, what their options are — in a tone that doesn't read like a form letter at the worst moment of their day. The whole plan has to be re-run as the operation evolves, without churning passengers who were already rebooked and notified. And the compensation layer — refund versus rebooking versus voucher, hotel eligibility, meal vouchers — is pure rules under DOT regulations, where getting it wrong is a compliance problem, not a customer-experience problem.
+
+### What good looks like
+
+The majority of disrupted passengers have a workable new itinerary and a clear notification before they ever reach an agent — ideally before they land. Call center volume during disruptions drops because the phone queue becomes the exception path, not the default. Families are never split. Passengers legally owed refunds are told so plainly, without being steered toward vouchers. Agents spend their time on the genuinely hard cases the system routed to them, with the passenger's full context already assembled.
+
+### The hard question
+
+During a major disruption, seats are zero-sum: every prioritization rule decides who gets home tonight and who sleeps in the terminal. Ranking by loyalty tier is revenue-aligned and defensible to the finance team — and it means the Global Services member with a flexible schedule outranks the Basic Economy passenger traveling to a funeral. Encoding "urgency" instead means either asking passengers (everyone discovers that claiming a funeral moves them up the queue) or inferring it from booking data (invasive, and frequently wrong). What prioritization policy would you actually encode, who inside United signs off on it, and would the airline be willing to publish it? If the answer to the last part is no, what does that tell you about the policy?
+
+---
+
+## Case Study 13 — Etsy: Handmade Policy Enforcement
+
+### The business problem
+
+Etsy's entire premise is that the things sold there are handmade, vintage, or craft supplies — that's the reason a buyer pays $38 for a ceramic mug instead of $6 on Amazon. That premise is under sustained attack from resellers: shops that list mass-produced goods from wholesale sites as "handmade," undercut genuine makers on price, and erode the trust that makes the marketplace worth a premium. Every buyer who receives a "handmade" item in wholesale packaging is a buyer who trusts the next listing less.
+
+Detection is genuinely hard, because every individual signal is ambiguous. Professional product photos might mean a reseller using the wholesale catalog's images — or a skilled maker who invested in photography. A shop fulfilling 300 orders a week of "hand-knitted" sweaters is suspicious — unless it's a maker legitimately using a production partner, which Etsy's rules allow with disclosure. Low prices might mean mass production — or a new maker underpricing to get established. The signals that separate these cases live in different places: reverse-image matches between listing photos and wholesale sites, price points implausible for the labor involved, shipping origin patterns, order velocity, and buyer reviews ("arrived in AliExpress packaging, took three weeks").
+
+The stakes are asymmetric in both directions. Miss the resellers and the marketplace's premise erodes. But wrongly suspend a genuine maker — for many of whom the shop is the household income — and you've destroyed a livelihood by algorithm, and handed the press a story that makes every honest seller on the platform afraid of the enforcement system. Etsy's integrity team currently works a reactive report queue with a backlog measured in months.
+
+### Why a single AI call won't solve this
+
+No single signal is conclusive, so each case requires an investigation loop: pull the listing, run the reverse-image search, check shop velocity against the plausible output of the claimed production method, read the review text, check whether a production partner is disclosed. Enforcement isn't binary — it's graduated (request production disclosure, restrict the listing, delist, suspend the shop), and each step should require a different evidence bar. Sellers can appeal with evidence of their own — process photos, material receipts — which the system has to actually evaluate rather than rubber-stamp. And enforced resellers re-register under new names, so the system has to recognize returning offenders without flagging every new shop that happens to sell in the same category.
+
+### What good looks like
+
+Reseller listings measurably decline, and buyer complaints of "mass-produced item sold as handmade" decline with them. Genuine makers are almost never suspended — and when a false suspension happens, the appeal resolves in days, not weeks, because the evidence behind the decision is assembled and auditable. Every autonomous enforcement action carries an evidence file a human reviewer could check in five minutes. The integrity team's queue shifts from triaging raw reports to reviewing the system's borderline cases.
+
+### The hard question
+
+The errors here are not symmetric: a false suspension can end a real person's income overnight, while a missed reseller costs diffuse, slow trust. That argues for a human reviewing every enforcement action — which recreates the months-long backlog that made enforcement toothless in the first place. Where exactly is the evidence bar above which the system may act autonomously, and below which it must wait for a human? And what due process does a seller get against an algorithmic accusation — is Etsy obligated to show the seller the evidence against them, knowing that publishing what the system looks for teaches resellers exactly what to evade?
+
+---
+
+## Case Study 14 — Rocket Mortgage: Self-Employed Income Verification
+
+### The business problem
+
+A W-2 borrower's income verifies in minutes. A self-employed borrower — freelancer, gig worker, small business owner, a growing share of the US workforce — enters a different pipeline: two years of tax returns with schedules, profit-and-loss statements, bank statements, 1099s. An underwriter reads all of it to compute "qualifying income," which is not a number sitting in any document. It's a construction: add back depreciation, exclude one-time gains, decide whether a 20% year-over-year revenue drop is a declining business or one lost client already replaced, and notice when bank deposits don't match stated revenue.
+
+Each file takes an underwriter hours, and the process runs as a slow ping-pong: the borrower uploads documents, waits days, gets asked for one more document, waits again. Files routinely take weeks. Rate locks expire. Borrowers walk. The cruelest part is that most of the delay isn't analysis — it's discovering, sequentially, what's missing, when a complete read of the file on day one would have surfaced the full list.
+
+Rocket wants a system that ingests everything the borrower uploads, extracts and cross-checks the numbers, computes qualifying income under the agency guidelines (Fannie Mae and Freddie Mac publish exactly how — hundreds of pages of deterministic rules), flags inconsistencies, generates the complete list of missing or clarifying documents up front, and drafts the income analysis — with a human underwriter making the actual credit decision.
+
+### Why a single AI call won't solve this
+
+Extraction runs across messy, scanned, inconsistently formatted documents — and a misread digit in an income figure isn't a typo, it's a wrong loan decision. Cross-document reconciliation (do the bank deposits support the P&L?) is a different task from extraction. The qualifying income calculation must follow agency guidelines exactly — that's deterministic code with an audit trail, never a language model's arithmetic. Judging income stability and trend is where reasoning genuinely belongs. The document loop is conditional: finding a Schedule E triggers a need for documents the original checklist never mentioned. And the final decision must stay human — not as a courtesy, but because US lending law requires specific, accurate reasons for every adverse action.
+
+### What good looks like
+
+Time from document upload to conditional approval drops from weeks to days. The "we need one more thing" round-trips collapse into one complete request at the start. Underwriters review a drafted analysis with sources cited line-by-line instead of building it from raw PDFs, and their throughput rises without their error rate moving. Every number in the draft traces to a specific page of a specific document, and the calculation audit is clean.
+
+### The hard question
+
+Fair lending law judges systems by outcomes, not intentions — disparate impact is a violation even when every individual decision followed the guidelines. Self-employment is not evenly distributed across demographic groups, and a system that is systematically more conservative on cash-heavy businesses — restaurants, salons, trades — could produce a disparate impact no single file reveals. How would you even detect that, given that testing for it requires demographic data the underwriting process is largely barred from using? And when the human underwriter "makes the final call" but accepts the system's draft 95% of the time, is that human review real or ceremonial — and which answer would a regulator reach?
+
+---
+
+## Case Study 15 — Instacart: Out-of-Stock Substitution
+
+### The business problem
+
+In a typical Instacart order, one item in ten isn't on the shelf when the shopper gets there. The current flow: the shopper pings the customer with a suggested substitute, waits about ninety seconds, and — since most customers don't answer a push notification while at work — guesses. Bad substitutions are a top driver of refunds and order dissatisfaction, and the failures have a shape: whole milk substituted for oat milk (the customer is lactose intolerant), regular pasta for gluten-free, a different brand for the one item this customer is genuinely loyal to, a substitution made for an item the customer would rather have skipped entirely.
+
+The right call depends on why the item is in the basket, and the signals exist to infer it. A customer whose entire basket is gluten-free is telling you something about the pasta. An item bought weekly for two years is a staple with a known acceptable-substitute history. An unusual item appearing once alongside recipe-correlated ingredients probably needs a functional equivalent tonight, not a refund. Instacart has the purchase history, the customer's past accept/reject decisions on substitutions, the full current basket, item attribute data, explicit dietary flags where customers have set them — and a human shopper standing in the aisle who can see things no database can.
+
+### Why a single AI call won't solve this
+
+This is thousands of decisions per minute, each with a latency budget of seconds while a shopper stands waiting. The architecture has to split cleanly: dietary and allergy flags are hard guardrails — deterministic rules that no model output can override, because "the model was confident" is not an acceptable reason a celiac customer received wheat. Ranking candidate substitutes is per-customer reasoning over history and basket context. The shopper is a human in the loop with unique information — whether the suggested substitute is actually on the shelf — so the system's output is a ranked shortlist with reasons, not a command. Pinging the customer is itself a decision: ask only when genuinely ambiguous, because over-asking trains customers to ignore every ping including the one that matters. And every accept, reject, and refund feeds back into the next order's rankings.
+
+### What good looks like
+
+Substitution acceptance rates rise and refunds on substituted items fall. Dietary-flag violations are zero — not rare, zero. Shoppers spend less time waiting on pings that were never going to be answered. Customers who never respond to anything still get substitutions that feel like someone who knows them made the call. The ping, when it does arrive, is worth answering.
+
+### The hard question
+
+A wrong substitution is a four-dollar annoyance — until it's an allergen, and then it's a hospitalization. Instacart's terms place the burden on customers to check their delivered items, but it's the system making the substitution decision, and a customer who set a dietary flag took an explicit step to protect themselves. Is a substitution engine a convenience feature or a safety-critical system — and does the answer change the confidence bar and human oversight required for flagged items? When the defense is "the shopper approved it," is a gig worker with ninety seconds, no context on the customer, and a rating to protect a real safety layer — or a liability shield with a person inside it?
 
 ---
 
