@@ -1,6 +1,6 @@
 # Capstone Case Studies
 
-**10 business problems across Indian companies. Pick one, design and build an AI system that solves it, and demo it on August 15.**
+**11 business problems across Indian and US companies. Pick one, design and build an AI system that solves it, and demo it on August 15.**
 
 These are not "AI feature" prompts. They are business problems — messy, multi-step, real. Most of them cannot be solved by a single LLM call. Some require agents working in loops. Some require deterministic programs working alongside AI. Some require multiple agents with different responsibilities coordinating with each other. Some require human-in-the-loop at specific decision points.
 
@@ -297,6 +297,28 @@ The conversion rate from inquiry to order for deals where facilitation is applie
 ### The hard question
 
 IndiaMART's facilitation system will develop detailed knowledge of buyer requirements and supplier capabilities — including information that buyers and suppliers consider competitively sensitive (pricing floors, supply constraints, buyer budget). This information flows through IndiaMART's system and could, in principle, be used to benefit one party over another. What obligations does IndiaMART have to buyers and suppliers regarding how this information is used? Under DPDP Act 2023, what consent framework needs to exist before IndiaMART's AI system uses information shared in a deal negotiation to improve future facilitation?
+
+---
+
+## Case Study 11 — Airbnb: Guest Refund Request Triage
+
+### The business problem
+
+A guest messages Airbnb during or right after a stay: the AC didn't work, the unit was dirty, an advertised amenity wasn't there. Airbnb has to decide fast — full refund, partial refund, or deny the claim — and both sides have something real at stake. Grant refunds too easily and hosts lose income on stays that may have been fine, and eventually stop trusting the platform to have their side. Deny too readily and guests feel cheated, leave a bad review, or just stop booking through Airbnb.
+
+The same complaint can mean very different things. "The AC didn't work" could mean it was genuinely broken the whole stay — and the guest mentioned it in the in-stay message thread, and the host's own maintenance log shows a ticket. Or it could mean the guest never figured out how to use it, and no other guest in the last twenty stays has said a word about that unit's AC. Or it could be a guest who had a perfectly fine stay and files a complaint on checkout day, having said nothing during the stay, hoping for a discount. Telling these apart means reading the in-stay message thread (did they raise it when it was happening, or only after checkout), checking what the listing actually promises or disclaims, checking whether other recent guests of the same unit mention the same issue, and checking whether this particular guest has a pattern of filing this kind of complaint.
+
+### Why a single AI call won't solve this
+
+Each piece of evidence lives in a different unstructured source — the message thread, the listing description, other guests' review text, this guest's own complaint history — and none of it settles the question by itself. The system has to synthesize all four into a legitimacy judgment, then apply a remedy that's proportional to how much of the stay was actually affected (one bad night out of five reads differently than the whole stay), then write the decision back to both host and guest in a way that doesn't sound accusatory to whichever side didn't get what they wanted. And when the evidence points to a genuine pattern — a guest who does this often, or a host whose listing draws this complaint repeatedly — that needs to surface to a human reviewer rather than get resolved silently in either direction.
+
+### What good looks like
+
+Most refund decisions resolve within an hour instead of sitting in a support queue for days. The system's legitimacy calls track closely with what a human trust & safety reviewer would decide given the same evidence. Hosts don't see a rise in refunds granted against issues they can show were fine, and guests with real issues get resolved without needing to escalate or leave a review just to get attention.
+
+### The hard question
+
+Airbnb's growth depends far more on guest satisfaction and repeat bookings than on any single host's happiness — hosts are, in aggregate, replaceable; a guest's next ten years of bookings are not. A refund-adjudication system built and tuned by Airbnb has a structural incentive to lean guest-friendly on close calls, independent of what the evidence actually supports. How would you even detect, let alone prove, whether the system is deciding disputes on the merits versus quietly optimizing for whichever side is more valuable to Airbnb's business? And if you found it was biased, would Airbnb's own incentives let it fix that?
 
 ---
 
