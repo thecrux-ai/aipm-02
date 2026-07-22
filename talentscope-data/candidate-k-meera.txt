@@ -1,0 +1,65 @@
+MEERA IYER
+Bengaluru, Karnataka | meera.iyer.csm@gmail.com | +91 96110 XXXXX
+
+---
+
+EXPERIENCE
+
+Customer Success Manager
+NexMerch Technologies Pvt. Ltd. | Bengaluru | March 2022 – Present (2 years 4 months)
+
+NexMerch Technologies builds an analytics and inventory dashboard for offline retailers — kirana stores, pharmacy chains, and electronics distributors. SaaS, India-focused, Series A.
+
+- Managing a portfolio of 60 mid-market retail accounts (₹2L–₹12L ARR), primarily grocery chains and pharmacy networks in Karnataka and Tamil Nadu
+- Net Revenue Retention: 108% in FY2023–24; 105% in FY2022–23
+- Conducted QBRs for all accounts above ₹5L ARR; 82% completed on time in the last year
+- Onboarded 22 new accounts in the last 18 months — led each onboarding from kickoff through go-live
+- Identified 11 upsell opportunities; 7 converted (₹9L in expansion ARR in FY2023–24)
+- Built a risk-flagging playbook using usage data signals (login frequency drop, feature adoption decline) — adopted by the full 4-person CS team
+
+Customer Support Executive
+Zoho Corporation | Chennai | July 2021 – February 2022 (8 months)
+
+- Handled inbound support tickets for Zoho CRM and Zoho Books (L1 and L2)
+- Resolved 900+ tickets in 8 months; average CSAT: 4.3/5
+- Left for NexMerch after receiving an offer to move into a full CSM role
+
+---
+
+EDUCATION
+
+B.Com, Finance and Accounting
+BMS College of Commerce and Economics, Bengaluru | 2018–2021
+CGPA: 8.4/10
+
+---
+
+SKILLS
+
+- CRM: HubSpot (proficient — 2 years daily use at NexMerch), Salesforce (basic, from Zoho training)
+- Data: Excel (advanced — pivot tables, VLOOKUP, dashboards), Google Sheets
+- Communication: English (professional), Kannada (native), Hindi (conversational), Tamil (basic)
+- Domain: retail software, B2B SaaS, FMCG/pharmacy supply chain (customer-side knowledge)
+
+---
+
+ADDITIONAL NOTE (from candidate's cover letter)
+
+"I have spent the last two years building a CSM practice at NexMerch almost from scratch — when I joined, there was no structured onboarding process, no health scoring, no QBR template. I built those. My 108% NRR last year was achieved with a 4-person CS team serving 200+ accounts, which meant a high-leverage approach was essential. I am looking for a larger, more structured environment where I can apply these skills with better tooling, a bigger account base, and a product that serves the same retail operators I already know well. Kirana360 is a natural fit."
+
+---
+
+SCREENER NOTE (for instructors)
+
+This candidate is the demo trigger for the tool-use agent crossing demo (Session 2 — 9:50 block).
+
+Single-call screener failure mode: NexMerch Technologies is not in any known company database. The screener cannot verify whether it is a B2B SaaS company, what its size is, or whether a portfolio of 60 accounts is plausible — and it either guesses (silent failure) or returns CANNOT_VERIFY with no further action.
+
+Tool-use agent correct path:
+1. Step 2 hits CANNOT_VERIFY on "3–6 years B2B SaaS CSM" — NexMerch Technologies is unknown.
+2. Agent calls lookup_company("NexMerch Technologies") → confirmed SaaS, analytics for offline retailers, Series A, but only 12 employees.
+3. Agent observes: B2B SaaS confirmed. But 12 employees is very small. 60 accounts is a high ratio for a pre-scale team.
+4. Agent calls check_company_size("NexMerch Technologies") → 12 FTEs, ₹12Cr Series A — pre-scale, cannot independently verify a 60-account portfolio claim.
+5. Step 3 → HOLD + hitl_required: true. Reason: "Company confirmed B2B SaaS but too early-stage to verify claimed portfolio size. Phone screen recommended to validate the 60-account and 108% NRR claims."
+
+Expected verdict: HOLD. The metrics are impressive if true — but they come entirely from a single unverifiable employer. A human recruiter needs to do the phone screen.

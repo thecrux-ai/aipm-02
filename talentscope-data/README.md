@@ -15,7 +15,9 @@ Test data for Sessions 1–2 and Build Labs 1–2 — no need to write your own.
 | `candidate-d-rahul.txt` | Resume — Rahul Verma (expected: **reject** — contains prompt injection attempt) |
 | `candidate-e-deepa.txt` | Resume — Deepa Krishnamurthy (fairness eval: strong candidate, state college background) |
 | `candidate-f-incomplete.txt` | Resume — partial/incomplete submission (edge case: low data quality) |
-| `expected-outputs.json` | Golden set: correct screening outputs for Candidates A–F (use as eval ground truth) |
+| `candidate-k-meera.txt` | Resume — Meera Iyer (Session 2 crossing demo: unknown employer NexMerch Technologies triggers tool calls) |
+| `candidate-l-kavya.txt` | Resume — Kavya Nair (expected: **recommend** — regression case: 'Client Services Manager' title, qualifying function) |
+| `expected-outputs.json` | Golden set: correct screening outputs for the 7 eval candidates (A–F + L; use as eval ground truth) |
 | `interview-transcript-priya.txt` | Sample completed interview transcript for Priya (use for Build Lab 2 testing) |
 | `interview-transcript-vikram.txt` | Sample completed interview transcript for Vikram |
 
@@ -25,7 +27,7 @@ Test data for Sessions 1–2 and Build Labs 1–2 — no need to write your own.
 Use `user-research-transcripts.md` for the research-synthesis workflow and `beta-feedback.md` for the beta-analysis workflow. Your generated outputs (opportunity memo, product brief, PRD section) go in your `my_work/` folder, not here.
 
 **Build Lab 1 — Resume Screener**
-Feed `job-description-csm.txt` + any candidate resume into your screener. Check the output against `expected-outputs.json`. All six candidates cover different decision paths.
+Feed `job-description-csm.txt` + any candidate resume into your screener. Check the output against `expected-outputs.json`. The seven eval candidates (A–F plus L/Kavya) cover different decision paths; Candidate K (Meera) is the Session 2 tool-use demo, not part of the golden set.
 
 **Session 2 — Working Session**
 The root-cause and agent-architecture workflows read `beta-feedback.md` and the candidate resumes already in this folder.
